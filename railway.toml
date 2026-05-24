@@ -1,0 +1,23 @@
+[build]
+builder = "nixpacks"
+buildCommand = "pnpm install --frozen-lockfile && pnpm build"
+
+[build]
+builder = "nixpacks"
+buildCommand = "pnpm install --frozen-lockfile && pnpm build"
+
+[deploy]
+startCommand = "node dist/index.js"
+healthcheckPath = "/health"
+healthcheckTimeout = 10
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 10
+
+[deploy.env]
+NODE_ENV = "production"
+TZ = "UTC"
+
+[deploy.resources]
+cpu = 1000
+memory = 1024
+

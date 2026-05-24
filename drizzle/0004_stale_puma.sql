@@ -1,0 +1,1 @@
+ALTER TABLE `decision_audits` ADD `selectionScore` decimal(10,6);
